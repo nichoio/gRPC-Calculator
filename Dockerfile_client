@@ -1,0 +1,8 @@
+FROM golang:1.17-bullseye
+
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
+RUN go build -o main ./calculate/calculate_client
+
+CMD ["tail", "-f", "/dev/null"]
